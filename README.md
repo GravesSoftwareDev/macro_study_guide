@@ -5,6 +5,7 @@ A 62-question practice test for Macroeconomics chapters 11 (Fiscal Policy) and 1
 ## Features
 
 - Instant grading with a short explanation for every question
+- A "Break it down" button after each answer that walks through the correct answer step by step
 - Calculation practice for the multiplier, desired stimulus, tax cuts, transfers, fiscal restraint, the balanced budget multiplier, deficits, structural deficits, and debt service
 - Question map showing correct, missed, and unanswered questions
 - Filter by chapter, optional shuffled order, and answer choices shuffled each attempt

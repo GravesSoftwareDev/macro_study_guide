@@ -222,6 +222,10 @@
       html += '<p class="feedback-verdict">' + (r.correct ? "Correct" : "Incorrect") + "</p>";
       if (!r.correct) html += '<p class="feedback-answer">Correct answer: <strong>' + correctText(q) + "</strong></p>";
       html += '<div class="feedback-expl">' + q.explanation + "</div>";
+      if (q.breakdown) {
+        html += '<button type="button" class="btn btn-quiet btn-breakdown" id="breakdownBtn" aria-expanded="false" aria-controls="breakdown">Break it down</button>';
+        html += '<div class="breakdown" id="breakdown" hidden>' + q.breakdown + "</div>";
+      }
       html += "</div>";
     }
 
@@ -266,6 +270,14 @@
     if (next) next.addEventListener("click", goNext);
     var prev = document.getElementById("prevBtn");
     if (prev) prev.addEventListener("click", function () { goTo(state.idx - 1); });
+    var bdBtn = document.getElementById("breakdownBtn");
+    if (bdBtn) bdBtn.addEventListener("click", function () {
+      var panel = document.getElementById("breakdown");
+      var open = panel.hidden;
+      panel.hidden = !open;
+      bdBtn.setAttribute("aria-expanded", String(open));
+      bdBtn.textContent = open ? "Hide breakdown" : "Break it down";
+    });
   }
 
   function selectPos(pos) {
